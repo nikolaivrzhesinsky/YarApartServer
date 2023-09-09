@@ -11,7 +11,7 @@ spring:
     name: authentication
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/mts-loan-db
+    url: jdbc:postgresql://localhost:5432/yar_apart_auth_db
     username: postgres
     password: root
   jpa:

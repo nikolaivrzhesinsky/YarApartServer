@@ -1,0 +1,48 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users
+      author: Vrzesinsky
+      changes:
+        - tagDatabase:
+            tag: db_users_tag
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: email
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: varchar(100)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: date-of-created
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: activation-code
+                  type: varchar(200)
+              - column:
+                  name: is-active
+                  type: boolean
+
+
