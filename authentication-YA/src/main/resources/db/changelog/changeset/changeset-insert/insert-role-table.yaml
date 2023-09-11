@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert_data_role
+      author: Vrzesinsky
+      changes:
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: role
+                  value: "ROLE_MODERATOR"
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: role
+                  value: "ROLE_ADMIN"
+        - insert:
+            tableName: role
+            columns:
+              - column:
+                  name: role
+                  value: "ROLE_USER"
