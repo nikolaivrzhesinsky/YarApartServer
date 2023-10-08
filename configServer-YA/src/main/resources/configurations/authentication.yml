@@ -20,3 +20,7 @@ spring:
       database-platform: org.hibernate.dialect.PostgreSQLDialect
   liquibase:
     enabled: true
+
+  #Security config
+jwtSecret: H1N1
+jwtExpiration: 1000000000

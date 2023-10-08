@@ -29,7 +29,7 @@ databaseChangeLog:
                     unique: true
               - column:
                   name: password
-                  type: varchar(100)
+                  type: varchar(200)
                   constraints:
                     nullable: false
                     unique: true

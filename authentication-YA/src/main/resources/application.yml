@@ -3,3 +3,7 @@ spring:
     import: optional:configserver:http://localhost:8888/
   application:
     name: authentication
+
+  #Security config
+jwtSecret: H1N1
+jwtExpiration: 1000000000
