@@ -12,7 +12,7 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: loan-order
+        - id: authentication
           uri: http://localhost:8081
           predicates:
             - Path=/**

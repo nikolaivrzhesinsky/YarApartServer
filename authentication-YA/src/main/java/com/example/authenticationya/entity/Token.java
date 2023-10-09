@@ -24,7 +24,7 @@ public class Token {
     @Column(name = "type")
     public TokenType tokenType = TokenType.BEARER;
 
-    @Column(name = "is-active")
+    @Column(name = "revoked")
     public boolean revoked;
     @Column(name="expired")
     public boolean expired;
