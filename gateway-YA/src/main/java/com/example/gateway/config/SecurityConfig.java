@@ -26,6 +26,7 @@ public class SecurityConfig {
                 .securityContextRepository(NoOpServerSecurityContextRepository.getInstance())
                 .authorizeExchange(it -> it
                         .pathMatchers("/auth/**").permitAll()
+                        .pathMatchers("/test/**").hasAnyRole("ROLE_ADMIN","ADMIN")
                         .anyExchange().authenticated()
                 )
                 .addFilterAt(new JwtTokenAuthenticationFilter(tokenProvider), SecurityWebFiltersOrder.HTTP_BASIC)
