@@ -59,7 +59,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         createUser.setPassword(passwordEncoder.encode(registrationDto.getPassword()));
         createUser.setEmail(registrationDto.getEmail());
         Set<Role> newRoles = new HashSet<>();
-        Role userRole = roleRepository.findByRole(Erole.ROLE_ADMIN)
+        Role userRole = roleRepository.findByRole(Erole.ROLE_USER)
                 .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
         newRoles.add(userRole);
         createUser.setRoles(newRoles);
@@ -76,7 +76,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(logInDto.getUserName(),
-                        logInDto.getPassword()));
+                                                        logInDto.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtGenerator.generateToken(authentication);
 

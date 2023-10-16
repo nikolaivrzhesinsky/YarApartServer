@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: update_users_id_seq
+      author: Vrzesinsky
+      changes:
+        - tagDatabase:
+            tag: db_update_users_id_seq
+        - sql:
+            dbms: 'postgresql'
+            sql: ALTER SEQUENCE users_id_seq RESTART WITH 42
+            comment: Up the user_seq value

@@ -11,5 +11,6 @@ databaseChangeLog:
       file: db/changelog/changeset/changeset-create/create-table-users-roles.yaml
   - include:
       file: db/changelog/changeset/changeset-insert/insert-admin-credentials.yaml
-
+  - include:
+      file: db/changelog/changeset/changeset-update/update-users_id_seq.yaml
 

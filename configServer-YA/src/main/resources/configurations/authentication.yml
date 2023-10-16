@@ -9,6 +9,7 @@ server:
 spring:
   application:
     name: authentication
+
   datasource:
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/yar_apart_auth_db
@@ -20,7 +21,3 @@ spring:
       database-platform: org.hibernate.dialect.PostgreSQLDialect
   liquibase:
     enabled: true
-
-  #Security config
-jwtSecret: H1N1
-jwtExpiration: 1000000000
