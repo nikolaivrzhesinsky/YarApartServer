@@ -25,8 +25,7 @@ public class SecurityConfig {
                 .httpBasic(ServerHttpSecurity.HttpBasicSpec::disable)
                 .securityContextRepository(NoOpServerSecurityContextRepository.getInstance())
                 .authorizeExchange(it -> it
-                        .pathMatchers("/auth/**").permitAll()
-                        .pathMatchers("/test/**").hasAnyRole("ROLE_ADMIN","ADMIN")
+                        .pathMatchers("/auth/**","/test/**").permitAll()
                         .anyExchange().authenticated()
                 )
                 .addFilterAt(new JwtTokenAuthenticationFilter(tokenProvider), SecurityWebFiltersOrder.HTTP_BASIC)
