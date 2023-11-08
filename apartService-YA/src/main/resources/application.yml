@@ -1,8 +1,8 @@
 spring:
   config:
-    import: optional:configserver:http://localhost:8888/
+    import: optional:configserver:http://configserver:8888/
   application:
-    name: authentication
+    name: apartService
 
   #Security config
 jwtSecret: ecf1222c-88fd-47f3-988f-bdd78bade1ad-1a1a1a1a1a1aa1a1a1a1a2b2b2b2b

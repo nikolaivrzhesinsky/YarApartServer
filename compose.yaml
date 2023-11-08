@@ -1,0 +1,38 @@
+version: '0.1'
+
+services:
+  postgres:
+    image: 'postgres:15'
+    environment:
+      - 'POSTGRES_DB=yar_apart_db'
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=root'
+    ports:
+      - "5432:5432"
+
+  configserver:
+    image: config-service
+    container_name: config-service
+    hostname: config-service
+    build:
+      context: ./configServer-YA
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    restart: always
+    depends_on:
+      - postgres
+
+  apartservice:
+    image: apart-service
+    container_name: apart-service
+    hostname: apart-service
+    build:
+      context: ./apartService-YA
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    restart: on-failure
+    depends_on:
+      - postgres
+      - configserver

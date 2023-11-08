@@ -8,11 +8,12 @@ server:
   port: 8081
 spring:
   application:
-    name: authentication
+    name: apartService
 
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/yar_apart_auth_db
+#    url: jdbc:postgresql://localhost:5432/yar_apart_auth_db
+    url: jdbc:postgresql://postgres:5432/yar_apart_db
     username: postgres
     password: root
   jpa:

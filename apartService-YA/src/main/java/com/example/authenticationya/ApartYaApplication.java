@@ -6,10 +6,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class AuthenticationYaApplication {
+public class ApartYaApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AuthenticationYaApplication.class, args);
+        SpringApplication.run(ApartYaApplication.class, args);
     }
 
 }
