@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users-roles
+      author: Vrzesinsky
+      changes:
+        - tagDatabase:
+            tag: db_users_roles_tag
+        - createTable:
+            tableName: users-roles
+            remarks: many to many table
+            columns:
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: user_id
+                    referencedTableName: users
+                    referencedColumnNames: id
+              - column:
+                  name: role_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: role_id
+                    referencedTableName: role
+                    referencedColumnNames: id
+        - addPrimaryKey:
+            tableName: users-roles
+            columnNames: user_id,role_id

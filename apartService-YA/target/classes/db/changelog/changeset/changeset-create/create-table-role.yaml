@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-role
+      author: Vrzesinsky
+      changes:
+        - tagDatabase:
+            tag: db_role_tag
+        - createTable:
+            tableName: role
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: role
+                  type: varchar(20)
+                  constraints:
+                    nullable: false

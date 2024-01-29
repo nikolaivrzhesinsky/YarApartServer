@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/changeset-create/create-table-user.yaml
+  - include:
+      file: db/changelog/changeset/changeset-create/create-table-role.yaml
+  - include:
+      file: db/changelog/changeset/changeset-create/create-table-token.yaml
+  - include:
+      file: db/changelog/changeset/changeset-insert/insert-role-table.yaml
+  - include:
+      file: db/changelog/changeset/changeset-create/create-table-users-roles.yaml
+  - include:
+      file: db/changelog/changeset/changeset-insert/insert-admin-credentials.yaml
+  - include:
+      file: db/changelog/changeset/changeset-update/update-users_id_seq.yaml
+
