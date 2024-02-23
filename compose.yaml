@@ -3,6 +3,7 @@ version: '0.1'
 services:
   postgres:
     image: 'postgres:15'
+    container_name: postgres
     environment:
       - 'POSTGRES_DB=yar_apart_db'
       - 'POSTGRES_USER=postgres'
