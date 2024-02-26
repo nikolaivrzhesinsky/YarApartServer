@@ -1,6 +1,8 @@
 spring:
   config:
+    #Docker
     import: optional:configserver:http://configserver:8888/
+    #Local
 #    import: optional:configserver:http://localhost:8888/
   application:
     name: apartService
