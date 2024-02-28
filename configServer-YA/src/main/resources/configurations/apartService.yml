@@ -1,9 +1,9 @@
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka
 server:
   port: 8081
 spring:
@@ -12,10 +12,9 @@ spring:
 
   datasource:
     driver-class-name: org.postgresql.Driver
-#    Local db
+  #Local db
 #    url: jdbc:postgresql://localhost:5432/yar_apart_auth_db
-
-#    Docker db
+  #Docker db
     url: jdbc:postgresql://postgres:5432/yar_apart_db
     username: postgres
     password: root

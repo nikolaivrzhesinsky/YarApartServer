@@ -88,7 +88,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         List<String> roles = user.getRoles().stream()
                 .map(item -> item.getRole().toString()).toList();
 
-        return new JwtResponse(jwt, user.getUserName(), roles);
+        return new JwtResponse(jwt);
     }
 
     private void saveUserToken(User user, String jwtToken) {
